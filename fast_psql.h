@@ -33,6 +33,7 @@ public:
     void AddValue( float value );
     void AddValue( char * value );
     void AddValue( bool value );
+    void AddValue( void );
 
 
 private:

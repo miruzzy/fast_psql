@@ -309,3 +309,12 @@ void fast_psql::AddValue( bool value )
     WriteBytes(buf+currentSize,&value,size);
     currentSize += size;
 }
+
+void fast_psql::AddValue( void )
+{
+    b_check();
+    currentColumn++;
+    int32_t size = -1;
+    WriteBytes(buf+currentSize,(void *)(&size),4);
+    currentSize += 4;
+}
